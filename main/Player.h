@@ -1,7 +1,9 @@
+#include <Gamebuino-Meta.h>
+
 #ifndef _PLAYER_h
 #define _PLAYER_h
 
-#include <Gamebuino-Meta.h>
+#include "Images.h"
 
 class Player
 {

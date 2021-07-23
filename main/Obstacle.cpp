@@ -32,7 +32,6 @@ void Obstacle::drawObstacle() const
 
 void Obstacle::resetObstacle(int8_t previousWindowY)
 {
-    //set an offset so that the random number doesnt stick to top or bottom for too long. Feed the offsets in the random number generator based on where the previous window was
     int8_t upperOffset;
     int8_t lowerOffset;
 
