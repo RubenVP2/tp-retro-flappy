@@ -27,7 +27,7 @@ void Obstacle::moveObstacle()
 void Obstacle::drawObstacle() const
 {
     gb.display.fillRect(topRectangle.x, topRectangle.y, topRectangle.w, topRectangle.l);
-    gb.display.fillRect(bottomRectangle.x, bottomRectangle.y, bottomRectangle.w, bottomRectangle.l);
+    gb.display.fillRect(bottomRectangle.x, bottomRectangle.y, bottomRectangle.w, bottomRectangle.l + (windowHeight - bottomRectangle.l));
 }
 
 void Obstacle::resetObstacle(int8_t previousWindowY)

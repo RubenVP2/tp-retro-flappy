@@ -16,14 +16,14 @@ ModeHandler::ModeHandler()
 
 void ModeHandler::showInGame()
 {
-    int16_t mapBaseDisplayCounter = 0;
-    int16_t mapBGDisplayCounter = 0;
 
     while (player.isPlayerAlive())
     {
         while (!gb.update())
             ;
         gb.display.clear();
+
+        gb.display.drawImage(0, 0, bg);
 
         player.updatePlayer();
         player.drawPlayer();
@@ -42,22 +42,6 @@ void ModeHandler::showInGame()
             player.changePlayerState(false);
 
             float playerX = player.getX();
-
-            while (true) //continue moving thr player to display a death animation
-            {
-                while (!gb.update())
-                    ;
-                gb.display.clear();
-
-                obstacleHandler.drawObstacles();
-                player.updatePlayer();
-                player.setX(playerX++);
-
-                if (player.getY() > gb.display.width())
-                {
-                    return;
-                }
-            }
         }
     }
 
@@ -67,6 +51,8 @@ void ModeHandler::showInGame()
 
 void ModeHandler::showDeathScreen()
 {
+    gb.display.drawImage(0, 0, bg);
+
     gb.display.println("Game OVER!");
     gb.display.println("Ton score: ");
     gb.display.setFontSize(2);

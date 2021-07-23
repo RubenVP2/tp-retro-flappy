@@ -4,5 +4,6 @@
 #include <Gamebuino-Meta.h>
 
 extern Image bird;
+extern Image bg;
 
 #endif
