@@ -17,13 +17,26 @@ ModeHandler::ModeHandler()
 void ModeHandler::showInGame()
 {
 
+    int16_t mapBaseDisplayCounter = 0;
+    int16_t mapBGDisplayCounter = 0;
+
     while (player.isPlayerAlive())
     {
         while (!gb.update())
             ;
         gb.display.clear();
 
-        gb.display.drawImage(0, 0, bg);
+        gb.display.drawImage(mapBGDisplayCounter, 0, bg);
+
+        if (gb.frameCount % 15 == 0)
+        {
+            mapBGDisplayCounter--;
+        }
+
+        if (mapBGDisplayCounter <= -80)
+        {
+            mapBGDisplayCounter = 0;
+        }
 
         player.updatePlayer();
         player.drawPlayer();
