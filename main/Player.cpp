@@ -38,11 +38,11 @@ void Player::drawPlayer()
 
     if (speedY >= 0) //draw bird going down
     {
-        gb.display.fillRect(x, y, 10, 10);
+        gb.display.fillRect(x, y, 6, 6);
     }
     else if (speedY < 0) //draw bird going up
     {
-        gb.display.fillRect(x, y, 10, 10);
+        gb.display.fillRect(x, y, 6, 6);
     }
 }
 

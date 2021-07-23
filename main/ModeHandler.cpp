@@ -68,7 +68,7 @@ void ModeHandler::showInGame()
 void ModeHandler::showDeathScreen()
 {
     gb.display.println("Game OVER!");
-    gb.display.println("Your score: ");
+    gb.display.println("Ton score: ");
     gb.display.setFontSize(2);
     gb.display.print("      ");
     gb.display.setColor(YELLOW);
@@ -76,7 +76,7 @@ void ModeHandler::showDeathScreen()
 
     gb.display.setFontSize(1);
     gb.display.setColor(YELLOW);
-    gb.display.println("Press 'B' to Restart");
+    gb.display.println("Appuyer sur B pour rejouer");
 
     if (gb.buttons.pressed(BUTTON_B))
     {
