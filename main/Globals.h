@@ -4,7 +4,7 @@ struct GameOptions
 {
     int speed;
     int windowHeight;
-    int gameMode = 0; //defaults to TITLE_SCREEN (4) upon creation
+    int gameMode = 0;
 };
 
 enum class MODE
