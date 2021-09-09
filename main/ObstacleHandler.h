@@ -24,7 +24,7 @@ private:
     Obstacle obstacles[4];
     int16_t obstacleX = 0;
     int16_t NUM_OF_OBSTACLES = 4;
-    int16_t SPACE_BETWEEN_OBSTACLES = 40;
+    int16_t SPACE_BETWEEN_OBSTACLES = 36;
     Player *player = nullptr;
 };
 

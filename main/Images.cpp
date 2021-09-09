@@ -1,6 +1,6 @@
 #include "Images.h"
 
-const uint16_t TRUMP_BIRD_DATA[] = {
+const uint16_t GOKU_DATA[] = {
 
     // metadata
 
@@ -30,7 +30,7 @@ const uint16_t TRUMP_BIRD_DATA[] = {
     0xf81f, 0xf81f, 0xf81f, 0xf81f, 0xf81f, 0xf81f, 0xbc86, 0xbc86, 0xf81f, 0xf81f, 0xf81f, 0xf81f, 0xf81f, 0xf81f, 0xf81f
 
 };
-Image bird = Image(TRUMP_BIRD_DATA);
+Image bird = Image(GOKU_DATA);
 
 const uint16_t BG_DATA[] = {
 

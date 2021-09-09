@@ -107,7 +107,7 @@ bool ObstacleHandler::checkCollision() const
 {
     if (player == nullptr)
     {
-        gb.display.print("Player in ObstacleHandler is a nullptr");
+        gb.display.print("Null pointer exception : Player est null");
     }
 
     for (int i = 0; i < NUM_OF_OBSTACLES; i++)
