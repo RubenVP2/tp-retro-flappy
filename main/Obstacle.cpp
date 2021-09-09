@@ -27,7 +27,7 @@ void Obstacle::moveObstacle()
 void Obstacle::drawObstacle() const
 {
     gb.display.fillRect(topRectangle.x, topRectangle.y, topRectangle.w, topRectangle.l);
-    gb.display.fillRect(bottomRectangle.x, bottomRectangle.y, bottomRectangle.w, bottomRectangle.l + (windowHeight - bottomRectangle.l));
+    gb.display.fillRect(bottomRectangle.x, bottomRectangle.y, bottomRectangle.w, bottomRectangle.l + (bottomRectangle.y - topRectangle.y));
 }
 
 void Obstacle::resetObstacle(int8_t previousWindowY)
@@ -127,9 +127,9 @@ void Obstacle::resetRectangles(int16_t previousWindowY)
     topRectangle.x = 4 * 35; //4 (amount of obstacles) * 35 (distance between each in pixels)
     topRectangle.y = 0;
     topRectangle.l = previousWindowY - windowHeight / 2;
-    
+
     // Correction de bug : si le rectangle du haut est trop proche de la sortie du screen
-    if (topRectangle.l < 0) 
+    if (topRectangle.l < 0)
     {
         topRectangle.l = 7;
     }
