@@ -50,7 +50,8 @@ void ModeHandler::showInGame()
         gb.display.drawRect(-1, -1, player.getScore() >= 10 ? 10 : 6, 8);
         gb.display.print(player.getScore());
 
-        if (obstacleHandler.checkCollision() || player.checkOutOfBounds()) //if player hits an obstacle or goes out of bounds
+        // Gestion de la collision + touche le haut ou bas de l'écran
+        if (obstacleHandler.checkCollision() || player.checkOutOfBounds()) 
         {
             player.changePlayerState(false);
 
