@@ -5,6 +5,7 @@
 
 ModeHandler modeHandler;
 
+// Phase de setup du jeu
 void setup()
 {
     gb.begin();
@@ -19,9 +20,11 @@ void loop()
     // Mode par défaut = écran de jeu
     switch (modeHandler.getMode())
     {
+    // Démarre le jeu
     case MODE::IN_GAME:
         modeHandler.showInGame();
         break;
+    // Montre l'écran de mort
     case MODE::DEATH_SCREEN:
         modeHandler.showDeathScreen();
         break;
