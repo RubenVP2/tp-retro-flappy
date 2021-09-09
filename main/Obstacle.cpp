@@ -123,15 +123,18 @@ int16_t Obstacle::getWindowHeight() const
 
 void Obstacle::resetRectangles(int16_t previousWindowY)
 {
+    // Nb d'obstacles par écran * distance entre chaque en pixel
     topRectangle.x = 4 * 35; //4 (amount of obstacles) * 35 (distance between each in pixels)
     topRectangle.y = 0;
     topRectangle.l = previousWindowY - windowHeight / 2;
-
-    if (topRectangle.l < 0) // if, after the update the top rectangle is too short out of screen, reset it to be 7 long
+    
+    // Correction de bug : si le rectangle du haut est trop proche de la sortie du screen
+    if (topRectangle.l < 0) 
     {
         topRectangle.l = 7;
     }
-    else if (topRectangle.l > gb.display.height() - windowHeight - 3) // if, after the update the top rectangle is too long, reset it so that the bottom rect can be at least 7 long
+    // reset la taille du rectangle du haut si celui-ci est trop grand (dépasse l'ihm)
+    else if (topRectangle.l > gb.display.height() - windowHeight - 3)
     {
         topRectangle.l = gb.display.height() - windowHeight - 7;
     }
