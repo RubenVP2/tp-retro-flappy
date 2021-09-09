@@ -5,6 +5,7 @@
 #include "Player.h"
 #include "ObstacleHandler.h"
 
+// Classe qui permet de gérer l'ihm ( écran de jeu / écran de mort / ...)
 class ModeHandler
 {
 
